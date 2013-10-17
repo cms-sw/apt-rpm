@@ -22,6 +22,7 @@
 
 #include <apt-pkg/fileutl.h>
 #include <stdio.h>
+#include <unistd.h>
     
 class pkgTagSection
 {

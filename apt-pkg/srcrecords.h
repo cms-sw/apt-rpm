@@ -14,7 +14,8 @@
 #define PKGLIB_SRCRECORDS_H
 
 #include <string>
-#include <vector>    
+#include <vector>
+#include <unistd.h>
 
 using std::string;
 using std::vector;

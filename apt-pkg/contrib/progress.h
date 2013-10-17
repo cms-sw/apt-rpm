@@ -24,6 +24,7 @@
 #include <map>
 #include <string>
 #include <sys/time.h>
+#include <unistd.h>
 
 using std::string;
 using std::map;

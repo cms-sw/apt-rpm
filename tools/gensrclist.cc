@@ -13,6 +13,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <assert.h>
+#include <climits>
 
 #include <map>
 #include <list>

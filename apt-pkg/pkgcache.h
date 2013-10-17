@@ -21,6 +21,7 @@
 
 #include <string>
 #include <time.h>
+#include <unistd.h>
 #include <apt-pkg/mmap.h>
 
 using std::string;
