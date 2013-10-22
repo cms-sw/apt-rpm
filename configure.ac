@@ -4,6 +4,7 @@ AC_PREREQ(2.59)
 AC_INIT([apt],[0.5.17],[hn-cms-sw-develtools@cern.ch])
 dnl Check the archs, we want the target type.
 AC_CONFIG_AUX_DIR([buildlib])
+AC_CONFIG_MACRO_DIR([m4])
 AC_CANONICAL_HOST
 AC_CONFIG_SRCDIR([AUTHORS.RPM])
 AM_INIT_AUTOMAKE([foreign subdir-objects dist-bzip2 1.9.5])
