@@ -57,12 +57,20 @@ void * rpmCallback(const void * arg,
 	 return NULL;
       fd = Fopen(filename, "r.ufdio");
       if (fd)
+#if RPM_VERSION <= 0x040900
 	 fd = fdLink(fd, "persist (showProgress)");
+#else
+	 fd = fdLink(fd);
+#endif
       return fd;
       break;
 
    case RPMCALLBACK_INST_CLOSE_FILE:
+#if RPM_VERSION <= 0x040900
       fd = fdFree(fd, "persist (showProgress)");
+#else
+      fd = fdFree(fd);
+#endif
       if (fd) {
 	 (void) Fclose(fd);
 	 fd = NULL;
