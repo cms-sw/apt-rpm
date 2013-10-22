@@ -11,8 +11,13 @@
 #include <rpm/rpmds.h>
 typedef rpm_data_t raptTagData;
 typedef rpm_count_t raptTagCount;
+#if RPM_VERSION <= 0x040900
 typedef rpmTag raptTag;
 typedef rpmTagType raptTagType;
+#else
+typedef rpm_tag_t raptTag;
+typedef rpm_tagtype_t raptTagType;
+#endif
 typedef rpmsenseFlags raptDepFlags;
 typedef rpm_loff_t raptOffset;
 typedef rpm_loff_t raptCallbackSize;
@@ -22,14 +27,14 @@ typedef uint32_t raptDbOffset;
 #else
 #include <rpm/header.h>
 typedef void * raptTagData;
-typedef int_32 raptTagCount;
-typedef int_32 raptTag;
-typedef int_32 raptTagType;
-typedef int_32 raptDepFlags;
-typedef int_32 raptOffset;
-typedef long unsigned int raptCallbackSize;
-typedef int_32 raptInt;
-typedef uint_32 raptDbOffset;
+typedef uint32_t raptTagCount;
+typedef int32_t raptTag;
+typedef uint32_t raptTagType;
+typedef uint32_t raptDepFlags;
+typedef uint64_t raptOffset;
+typedef uint64_t raptCallbackSize;
+typedef int32_t raptInt;
+typedef uint32_t raptDbOffset;
 #define RAPT_FILENAMES RPMTAG_OLDFILENAMES
 #endif
 
