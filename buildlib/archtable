@@ -13,6 +13,7 @@ sparc64	sparc
 alpha.*	alpha
 m68k	m68k
 arm.*	arm
+aarch64 aarch64
 ppc	powerpc
 powerpc	powerpc
 ppc64		powerpc64
