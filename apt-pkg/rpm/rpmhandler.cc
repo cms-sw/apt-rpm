@@ -323,7 +323,7 @@ bool RPMHdrHandler::PRCO(unsigned int Type, vector<Dependency*> &Deps)
       case pkgCache::Dep::Provides:
 	 deptype = RPMTAG_PROVIDENAME;
 	 break;
-#if RPM_VERSION >= 0x040403
+#if RPM_VERSION >= 0x040403 && RPM_VERSION < 0x040C00
       case pkgCache::Dep::Suggests:
 	 deptype = RPMTAG_SUGGESTSNAME;
 	 break;
@@ -332,6 +332,11 @@ bool RPMHdrHandler::PRCO(unsigned int Type, vector<Dependency*> &Deps)
 	 deptype = RPMTAG_ENHANCES;
 	 break;
 #endif
+#elif RPM_VERSION >= 0x040C00
+      case pkgCache::Dep::Suggests:
+         // Renamed in 4.12.0, see d6ecdb33c5d1b99d6fba6ee7cebecc7623ce972b in rpm repo
+         deptype = RPMTAG_OLDSUGGESTSNAME;
+         break;
 #endif
       default:
 	 /* can't happen... right? */
