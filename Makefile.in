@@ -229,9 +229,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/buildlib/netdb.h \
 	$(top_srcdir)/buildlib/statvfs.h ABOUT-NLS AUTHORS COPYING \
 	TODO buildlib/compile buildlib/config.guess \
-	buildlib/config.rpath buildlib/config.sub buildlib/depcomp \
-	buildlib/install-sh buildlib/ltmain.sh buildlib/missing \
-	buildlib/mkinstalldirs
+	buildlib/config.rpath buildlib/config.sub buildlib/install-sh \
+	buildlib/ltmain.sh buildlib/missing buildlib/mkinstalldirs
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -328,6 +327,7 @@ LN_S = @LN_S@
 LTLIBICONV = @LTLIBICONV@
 LTLIBINTL = @LTLIBINTL@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
