@@ -18,6 +18,8 @@ ppc	powerpc
 powerpc	powerpc
 ppc64		powerpc64
 powerpc64	powerpc64
+ppc64le	powerpc64le
+powerpc64le	powerpc64le
 mipsel  mipsel
 mipseb	mips
 mips	mips
