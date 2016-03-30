@@ -132,16 +132,16 @@ AC_EGREP_HEADER(RPMTRANS_FLAG_NOFDIGESTS, rpm/rpmlib.h,
 	[AC_MSG_RESULT(no) ])
 
 dnl Can we use g++ hash_map?
-AH_TEMPLATE(APT_WITH_GNU_HASH_MAP,
-	    [Define to 1 if you want to use the g++ hash_map extension])
-AC_MSG_CHECKING(for g++ hash_map extension)
+AH_TEMPLATE(APT_WITH_CXX11_STD_UNORDERED_MAP,
+	    [Define to 1 if you want to use the C++11 unordered_map])
+AC_MSG_CHECKING(for C++11 unordered_map)
 AC_LANG_PUSH([C++])
 AC_TRY_LINK(
 [
-#include <ext/hash_map>
-using namespace __gnu_cxx;
-],[hash_map<char*,hash<char*> > HashMap;
-],[AC_DEFINE_UNQUOTED(APT_WITH_GNU_HASH_MAP, 1) AC_MSG_RESULT(yes)
+#include <unordered_map>
+using namespace std;
+],[unordered_map<char*,hash<char*> > HashMap;
+],[AC_DEFINE_UNQUOTED(APT_WITH_CXX11_STD_UNORDERED_MAP, 1) AC_MSG_RESULT(yes)
 ],[AC_MSG_RESULT(no)])
 AC_LANG_POP([C++])
 

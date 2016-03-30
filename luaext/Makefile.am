@@ -8,7 +8,7 @@ EXTRA_DIST = \
 AM_CPPFLAGS = -I$(top_builddir)
 AM_CPPFLAGS += -I$(srcdir)/include -I.
 
-libluaext_la_CPPFLAGS = $(AM_CPPFLAGS) -DWITH_POSIX
+libluaext_la_CPPFLAGS = $(AM_CPPFLAGS) -DWITH_POSIX -DLUA_COMPAT_MODULE
 libluaext_la_LIBADD = -llua
 libluaext_la_SOURCES = \
 		linit.h \

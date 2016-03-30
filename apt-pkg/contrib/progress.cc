@@ -12,12 +12,12 @@
 #include <apt-pkg/error.h>
 #include <apt-pkg/configuration.h>
 
-#include <apti18n.h>
-
 #include <cstring>
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
+
+#include <apti18n.h>
 									/*}}}*/
 
 using namespace std;

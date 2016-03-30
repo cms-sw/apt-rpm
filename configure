@@ -16890,7 +16890,7 @@ hash_map<char*,hash<char*> > HashMap;
 _ACEOF
 if ac_fn_cxx_try_link "$LINENO"; then :
   cat >>confdefs.h <<_ACEOF
-#define APT_WITH_GNU_HASH_MAP 1
+#define APT_WITH_CXX11_STD_UNORDERED_MAP 1
 _ACEOF
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }

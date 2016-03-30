@@ -44,7 +44,7 @@ rpmListParser::rpmListParser(RPMHandler *Handler)
    Handler->Rewind();
    if (Handler->IsDatabase() == true)
    {
-#ifdef APT_WITH_GNU_HASH_MAP
+#ifdef APT_WITH_CXX11_STD_UNORDERED_MAP
       SeenPackages = new SeenPackagesType(517);
 #else
       SeenPackages = new SeenPackagesType;

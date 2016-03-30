@@ -5,9 +5,9 @@
 
 #include <cstring>
 
-#ifdef APT_WITH_GNU_HASH_MAP
+#ifdef APT_WITH_CXX11_STD_UNORDERED_MAP
 
-#include <ext/hash_map>
+#include <unordered_map>
 
 using namespace __gnu_cxx;
 
@@ -27,7 +27,7 @@ struct cstr_eq_pred
    size_t operator()(const char *s1, const char *s2) const
       { return strcmp(s1, s2) == 0; }
 };
-#endif /* APT_WITH_GNU_HASH_MAP */
+#endif /* APT_WITH_CXX11_STD_UNORDERED_MAP */
 
 struct cstr_lt_pred
 {

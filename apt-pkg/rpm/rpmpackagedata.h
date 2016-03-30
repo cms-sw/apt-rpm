@@ -22,16 +22,16 @@ class RPMPackageData
 {
    protected:
 
-#ifdef APT_WITH_GNU_HASH_MAP
-   hash_map<string,pkgCache::State::VerPriority,hash_string> Priorities;
-   hash_map<string,pkgCache::Flag::PkgFlags,hash_string> Flags;
-   hash_map<string,vector<string>*,hash_string> FakeProvides;
-   hash_map<string,int,hash_string> IgnorePackages;
-   hash_map<string,int,hash_string> DuplicatedPackages;
-   hash_map<string,bool,hash_string> CompatArch;
+#ifdef APT_WITH_CXX11_STD_UNORDERED_MAP
+   unordered_map<string,pkgCache::State::VerPriority,hash_string> Priorities;
+   unordered_map<string,pkgCache::Flag::PkgFlags,hash_string> Flags;
+   unordered_map<string,vector<string>*,hash_string> FakeProvides;
+   unordered_map<string,int,hash_string> IgnorePackages;
+   unordered_map<string,int,hash_string> DuplicatedPackages;
+   unordered_map<string,bool,hash_string> CompatArch;
    typedef map<string,pkgCache::VerIterator> VerMapValueType;
-   typedef hash_map<unsigned long,VerMapValueType> VerMapType;
-   typedef hash_map<const char*,int,
+   typedef unordered_map<unsigned long,VerMapValueType> VerMapType;
+   typedef unordered_map<const char*,int,
 		    hash<const char*>,cstr_eq_pred> ArchScoresType;
 #else
    map<string,pkgCache::State::VerPriority> Priorities;
